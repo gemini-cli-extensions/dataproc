@@ -25,7 +25,20 @@ This section covers connecting to and managing Dataproc resources.
 
 ---
 
+
 # Usage Guidelines
+
+## Connecting to New Resources
+
+When you create a new dataproc instance, or database using the available skills, the connection is not automatically established. You will need to perform the following steps:
+
+1.  **(Optional) Save your conversation:** To avoid losing your progress, save the current session by running the command: `/chat save <your-tag>`
+2. **Stop the CLI**: Terminate the Gemini CLI.
+3. **Update Extension Configuration**: Use the command `gemini extensions config dataproc` to update your settings (e.g. `DATAPROC_PROJECT`, `DATAPROC_REGION`) to point to the new resource.
+4. **Restart**: Relaunch the Gemini CLI
+5.  **(Optional) Resume conversation:** Resume your conversation with the command: `/chat resume <your-tag>`
+
+**Important:** Do not assume a connection to a newly created resource is active. Always follow the steps above to reconfigure your connection.
 
 ## Reusing Project Values
 
