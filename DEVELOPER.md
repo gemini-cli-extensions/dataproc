@@ -1,0 +1,112 @@
+# DEVELOPER.md
+
+This document provides instructions for setting up your development environment
+and contributing to the Dataproc Agent skills project.
+
+## Prerequisites
+
+Before you begin, ensure you have the following:
+
+1.  **Gemini CLI:** Install the Gemini CLI version v0.6.0 or above.
+2.  **Dataproc Resources:** Access to active Dataproc clusters and jobs for testing.
+
+## Developing the Extension
+
+### Running from Local Source
+
+This extension uses **Agent Skills** to interact with Firestore. The development process involves generating these skills locally and linking the extension to the Gemini CLI.
+
+1.  **Clone the Repository:**
+
+    ```bash
+    git clone https://github.com/gemini-cli-extensions/dataproc.git
+    cd dataproc
+    ```
+
+2.  **Install the Extension Locally:** Use the Gemini CLI to install the
+    extension from your local directory.
+
+
+    ```bash
+    gemini extensions install .
+    ```
+    The CLI will prompt you to confirm the installation. Accept it to proceed.
+
+
+3.  **Testing Changes:** After installation, start the Gemini CLI (`gemini`).
+    You can now interact with the `dataproc` skills to manually test your changes.
+
+## Testing
+
+### Automated Presubmit Checks
+
+A GitHub Actions workflow (`.github/workflows/presubmit-tests.yml`) is triggered
+for every pull request. This workflow primarily verifies that the extension can
+be successfully installed by the Gemini CLI.
+
+All tools are currently tested in the [MCP Toolbox GitHub](https://github.com/googleapis/mcp-toolbox).
+
+The skills themselves are validated using the `skills-validate.yml` workflow.
+
+### Other GitHub Checks
+
+*   **License Header Check:** A workflow ensures all necessary files contain the
+    proper license header.
+*   **Conventional Commits:** This repository uses
+    [Release Please](https://github.com/googleapis/release-please) to manage
+    releases. Your commit messages must adhere to the
+    [Conventional Commits](https://www.conventionalcommits.org/) specification.
+
+## Maintainer Information
+
+### Team
+
+The primary maintainers for this repository are defined in the [`.github/CODEOWNERS`](.github/CODEOWNERS) file:
+
+*   `@gemini-cli-extensions/senseai-eco`
+*   `@gemini-cli-extensions/dataproc-maintainers`
+
+### Releasing
+
+The release process is automated using `release-please`. It consists of an automated changelog preparation step followed by the manual merging of a Release PR. When the Release PR is merged, `release-please` creates a new GitHub tag and a corresponding GitHub Release.
+
+#### Automated Changelog Enrichment
+
+Before a Release PR is even created, a special workflow automatically mirrors
+relevant changelogs from the core `googleapis/mcp-toolbox` dependency. This
+ensures that the release notes for this extension accurately reflect important
+upstream changes.
+
+The process is handled by the [`mirror-changelog.yml`](.github/workflows/mirror-changelog.yml) workflow:
+
+1. **Trigger:** The workflow runs automatically on pull requests created by
+   Renovate for `toolbox` version updates.
+2. **Parsing:** It reads the detailed release notes that Renovate includes in
+   the PR body.
+3. **Filtering:** These release notes are filtered to include only changes
+   relevant to this extension. The relevance is determined by a keyword (e.g.,
+   `firestore`), passed as an environment variable in the workflow file.
+4. **Changelog Injection:** The script formats the filtered entries as
+   conventional commits and injects them into the PR body within a
+   `BEGIN_COMMIT_OVERRIDE` block.
+5. **Release Please:** When the main Release PR is created, `release-please`
+   reads this override block instead of the standard `chore(deps): ...` commit
+   message, effectively mirroring the filtered upstream changelog into this
+   project's release notes.
+
+> **Note for Maintainers:** The filtering script is an automation aid, but it
+> may occasionally produce "false positives" (e.g., an internal logging change
+> that happens to contain the keyword). Before merging a `toolbox` dependency
+> PR, maintainers must **review the generated `BEGIN_COMMIT_OVERRIDE` block**
+> and manually delete any lines that are not relevant to the end-users of this
+> extension. The curated override block is the final source of truth for the
+> release changelog.
+
+#### Release Process
+
+1.  **Release PR:** When commits with conventional commit headers (e.g., `feat:`,
+    `fix:`) are merged into the `main` branch, `release-please` will
+    automatically create or update a "Release PR".
+2.  **Merge Release PR:** A maintainer approves and merges the Release PR. This
+    action triggers `release-please` to create a new GitHub tag and a
+    corresponding GitHub Release.
