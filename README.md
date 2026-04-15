@@ -95,6 +95,13 @@ To view or update your configuration in Gemini CLI:
 gemini
 ```
 
+_(Tip: Run `/extensions list` to verify your configuration and active extensions.)_
+
+> [!WARNING]
+> **Changing Instance & Database Connections**
+> Currently, the database connection must be configured before starting the agent and can not be changed during a session.
+> To save and resume conversation history in Gemini CLI use command: `/chat save <tag>` and `/chat resume <tag>`.
+
 </details>
 
 <details>
