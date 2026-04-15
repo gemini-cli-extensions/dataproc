@@ -56,6 +56,12 @@ Please keep these env vars handy during the installation process:
 - `DATAPROC_PROJECT`: The GCP project ID.
 - `DATAPROC_REGION`: The region of your Dataproc resources.
 
+> [!NOTE]
+>
+> - Ensure [Application Default Credentials](https://cloud.google.com/docs/authentication/gcloud) are available in your environment.
+> - If your Cloud SQL for PostgreSQL instance uses private IPs, you must run your agent in the same Virtual Private Cloud (VPC) network.
+
+
 ### Installation & Usage
 
 To start interacting with Dataproc, install the skills for your preferred AI agent, then launch the agent and use natural language to ask questions or perform tasks.
