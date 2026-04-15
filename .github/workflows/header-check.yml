@@ -12,5 +12,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-handleGHRelease: true
-manifest: true
+name: 'License Header Check'
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  license-check:
+    name: 'License Header Check'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout Repository'
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+
+      - name: Check License Header
+        uses: apache/skywalking-eyes/header@98a5d1362e26852204382ca749ed66631f15a95d # main
