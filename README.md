@@ -119,7 +119,7 @@ claude
 **3. Add the marketplace:**
 
 ```bash
-/plugin marketplace add https://github.com/gemini-cli-extensions/dataproc.git#0.0.0
+/plugin marketplace add https://github.com/gemini-cli-extensions/dataproc.git#1.0.0
 ```
 
 **4. Install the plugin:**
@@ -136,7 +136,7 @@ claude
 **1. Clone the Repo:**
 
 ```bash
-git clone --branch 0.0.0 git@github.com:gemini-cli-extensions/dataproc.git
+git clone --branch 1.0.0 git@github.com:gemini-cli-extensions/dataproc.git
 ```
 
 **2. Install the plugin:**
@@ -183,7 +183,7 @@ Enter your environment vars as described in the [configuration section](#configu
 **1. Clone the Repo:**
 
 ```bash
-git clone --branch 0.0.0 https://github.com/gemini-cli-extensions/dataproc.git
+git clone --branch 1.0.0 https://github.com/gemini-cli-extensions/dataproc.git
 ```
 
 **2. Install the skills:**
