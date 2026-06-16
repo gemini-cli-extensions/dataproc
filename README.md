@@ -155,16 +155,10 @@ In your terminal, set your environment vars as described in the [configuration s
 claude
 ```
 
-**3. Add the marketplace:**
+**3. Install the plugin:**
 
 ```bash
-/plugin marketplace add https://github.com/gemini-cli-extensions/dataproc.git#0.1.0
-```
-
-**4. Install the plugin:**
-
-```bash
-/plugin install dataproc@dataproc-marketplace
+/plugin install dataproc@claude-plugins-official
 ```
 
 </details>
