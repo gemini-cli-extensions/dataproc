@@ -163,7 +163,7 @@ codex plugin marketplace add GoogleCloudPlatform/data-agent-kit
 **2. Install the plugin:**
 
 ```bash
-codex plugin install dataproc@data-agent-kit
+codex plugin add dataproc@data-agent-kit
 ```
 
 **3. Set env vars:**
