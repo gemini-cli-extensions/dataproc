@@ -1,4 +1,5 @@
 {
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "dataproc",
   "version": "0.1.0",
   "description": "Manage Dataproc clusters and jobs.",
@@ -7,7 +8,11 @@
     "email": "data-cloud-ai-integrations@google.com"
   },
   "homepage": "https://cloud.google.com/dataproc",
-  "license": "Apache-2.0",
   "repository": "https://github.com/gemini-cli-extensions/dataproc",
-  "skills": "./skills/"
+  "license": "Apache-2.0",
+  "keywords": [
+    "dataproc",
+    "google-cloud",
+    "big-data"
+  ]
 }
