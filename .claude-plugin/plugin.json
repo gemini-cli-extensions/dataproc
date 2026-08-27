@@ -7,7 +7,36 @@
     "email": "data-cloud-ai-integrations@google.com"
   },
   "homepage": "https://cloud.google.com/dataproc",
-  "license": "Apache-2.0",
   "repository": "https://github.com/gemini-cli-extensions/dataproc",
-  "skills": "./skills/"
+  "license": "Apache-2.0",
+  "userConfig": {
+    "dataproc_project": {
+      "title": "Project ID",
+      "description": "ID of the Google Cloud project",
+      "type": "string",
+      "sensitive": false
+    },
+    "dataproc_region": {
+      "title": "Location",
+      "description": "Region of the Dataproc resources",
+      "type": "string",
+      "sensitive": false
+    }
+  },
+  "mcpServers": {
+    "dataproc": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@toolbox-sdk/server@1.9.0",
+        "--prebuilt",
+        "dataproc",
+        "--stdio"
+      ],
+      "env": {
+        "DATAPROC_PROJECT": "${user_config.dataproc_project}",
+        "DATAPROC_REGION": "${user_config.dataproc_region}"
+      }
+    }
+  }
 }

@@ -2,6 +2,18 @@
   "name": "dataproc",
   "version": "0.1.0",
   "description": "Manage Dataproc clusters and jobs.",
+  "mcpServers": {
+    "dataproc": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@toolbox-sdk/server@1.9.0",
+        "--prebuilt",
+        "dataproc",
+        "--stdio"
+      ]
+    }
+  },
   "contextFileName": "DATAPROC.md",
   "settings": [
     {
