@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "dataproc": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@toolbox-sdk/server@1.9.0",
+        "--prebuilt",
+        "dataproc",
+        "--stdio"
+      ],
+      "env_vars": [
+        "DATAPROC_PROJECT",
+        "DATAPROC_REGION"
+      ]
+    }
+  }
+}

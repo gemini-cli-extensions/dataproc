@@ -14,5 +14,40 @@
     "dataproc",
     "google-cloud",
     "big-data"
-  ]
+  ],
+  "extensions": {
+    "com.google.cloud.data.agent-plugins": {
+      "config": [
+        {
+          "key": "DATAPROC_PROJECT",
+          "title": "Project ID",
+          "description": "ID of the Google Cloud project"
+        },
+        {
+          "key": "DATAPROC_REGION",
+          "title": "Location",
+          "description": "Region of the Dataproc resources"
+        }
+      ],
+      "gemini": {
+        "mcpServerName": "dataproc",
+        "contextFileName": "DATAPROC.md"
+      },
+      "codex": {
+        "interface": {
+          "displayName": "Dataproc",
+          "shortDescription": "Manage Dataproc clusters and jobs.",
+          "developerName": "Google LLC",
+          "category": "Data & Analytics",
+          "capabilities": [
+            "Read",
+            "Write"
+          ],
+          "defaultPrompt": [
+            "You are a highly skilled data engineer and cloud architect. Your purpose is to help the developer manage Dataproc clusters and jobs and utilize data context throughout the entire software delivery cycle."
+          ]
+        }
+      }
+    }
+  }
 }

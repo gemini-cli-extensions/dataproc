@@ -5,7 +5,7 @@
     "email": "data-cloud-ai-integrations@google.com"
   },
   "metadata": {
-    "description": "Agent skills for Dataproc to manage clusters and jobs."
+    "description": "Manage Dataproc clusters and jobs."
   },
   "plugins": [
     {
