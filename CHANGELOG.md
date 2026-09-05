@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.1](https://github.com/gemini-cli-extensions/dataproc/compare/0.1.0...0.1.1) (2026-09-05)
+
+
+### Features
+
+* **deps:** update dependency googleapis/mcp-toolbox to v1.2.0 ([#11](https://github.com/gemini-cli-extensions/dataproc/issues/11)) ([2c54651](https://github.com/gemini-cli-extensions/dataproc/commit/2c546511d415a09d23e91e4c533390629f60cce7))
+* **plugin:** migrate from generated skills to the prebuilt MCP server ([#29](https://github.com/gemini-cli-extensions/dataproc/issues/29)) ([afbd516](https://github.com/gemini-cli-extensions/dataproc/commit/afbd516845a34fcf460ec447b81868bc48962b0f))
+* **plugin:** support agent plugin spec ([#28](https://github.com/gemini-cli-extensions/dataproc/issues/28)) ([d786954](https://github.com/gemini-cli-extensions/dataproc/commit/d78695419d7581f818d289cd347081dd2d66badd))
+
 ## 0.1.0 (2026-04-17)
 
 
