@@ -1,5 +1,6 @@
 toolbox*
 *.sh
+!.github/scripts/generate_skills.sh
 skills-gen/
 node_modules/
 .env
